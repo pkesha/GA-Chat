@@ -42,5 +42,43 @@ public class User {
         this.lastName = lastName;
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<ChatMessage> getMessageList() {
+        return messageList;
+    }
+
+    public void setMessageList(List<ChatMessage> messageList) {
+        this.messageList = messageList;
+    }
+
+    public List<Conversation> getConversationList() {
+        return conversationList;
+    }
+
+    public void setConversationList(List<Conversation> conversationList) {
+        this.conversationList = conversationList;
+    }
 }
