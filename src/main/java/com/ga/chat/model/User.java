@@ -24,4 +24,23 @@ public class User {
     private List<Conversation> conversationList;
 
 
+    public User() {
+    }
+
+    public User(Long id, String firstName, String lastName, List<ChatMessage> messageList,
+                List<Conversation> conversationList) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.messageList = messageList;
+        this.conversationList = conversationList;
+    }
+
+    public User(Long id, String firstName, String lastName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+
 }
