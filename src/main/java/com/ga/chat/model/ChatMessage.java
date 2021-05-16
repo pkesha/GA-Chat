@@ -106,4 +106,16 @@ public class ChatMessage {
     public void setConversation(Conversation conversation) {
         this.conversation = conversation;
     }
+
+    @Override
+    public String toString() {
+        return "ChatMessage{" +
+                "id=" + id +
+                ", message='" + message + '\'' +
+                ", fromLogin='" + fromLogin + '\'' +
+                ", date=" + date +
+                ", user=" + user +
+                ", conversation=" + conversation +
+                '}';
+    }
 }
