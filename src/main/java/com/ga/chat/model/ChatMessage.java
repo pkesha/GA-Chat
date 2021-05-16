@@ -1,9 +1,9 @@
 package com.ga.chat.model;
 
 import java.time.LocalDate;
-import javax.persistence.*;
-import com.ga.chat.model.Conversation;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "chatmessages")
