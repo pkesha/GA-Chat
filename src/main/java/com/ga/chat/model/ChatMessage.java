@@ -1,9 +1,9 @@
 package com.ga.chat.model;
 
-import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "chatmessages")
@@ -11,9 +11,10 @@ public class ChatMessage {
 
 
     // This will have a column of id, with each new entry being unique
+
+    //@GeneratedValue(strategy = GenerationType.IDENTITY);
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY);
     private Long id;
 
     @Column
