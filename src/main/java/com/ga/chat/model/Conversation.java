@@ -9,20 +9,20 @@ import java.util.List;
 @Table(name="conversations")
 public class Conversation {
 
-    //@GeneratedValue(strategy = GenerationType.IDENTITY);
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column
     private Long id;
 
     // There will only be two users
-    // Look how to do many to many
+    // How to do many to many?
     @JsonIgnore
     @ManyToMany
     @JoinColumn(name="user_id")
     private List<User> userList;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "conversation")
+    @OneToMany(mappedBy="conversations")
     private List<ChatMessage> messageList;
 
     public Conversation() {

@@ -11,6 +11,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
+    private String userName;
+
     @Column
     private String firstName;
 
@@ -23,17 +26,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Conversation> conversationList;
 
-
     public User() {
-    }
-
-    public User(Long id, String firstName, String lastName, List<ChatMessage> messageList,
-                List<Conversation> conversationList) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.messageList = messageList;
-        this.conversationList = conversationList;
     }
 
     public User(Long id, String firstName, String lastName) {

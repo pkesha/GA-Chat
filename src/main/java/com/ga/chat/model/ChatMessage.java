@@ -12,7 +12,7 @@ public class ChatMessage {
 
     // This will have a column of id, with each new entry being unique
 
-    //@GeneratedValue(strategy = GenerationType.IDENTITY);
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column
     private Long id;
@@ -35,7 +35,7 @@ public class ChatMessage {
     // Many messages to a conversation
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name="conversation_id");
+    @JoinColumn(name="conversation_id")
     private Conversation conversation;
 
     public ChatMessage(Long id, String message, String fromLogin, LocalDate date) {
