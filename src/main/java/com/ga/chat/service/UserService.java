@@ -6,6 +6,7 @@ import com.ga.chat.repository.UserRepository;
 import com.ga.chat.security.JWTUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -40,6 +41,10 @@ public class UserService {
            throw new InformationExistsException("User with user name " + user.getUserName() 
            + " already exists");
        }
+   }
+
+   public ResponseEntity<?> loginUser(LoginRequest loginRequest){
+
    }
 
 }
