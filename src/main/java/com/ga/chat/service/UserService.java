@@ -31,13 +31,13 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User createUser(User user){
-        if(!userRepository.existsByUserName(user.getUserName())) {
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
-            return userRepository.save(user);
-        } else {
-            throw new Exception()
-        }
-    }
+//    public User createUser(User user){
+//        if(!userRepository.existsByUserName(user.getUserName())) {
+//            user.setPassword(passwordEncoder.encode(user.getPassword()));
+//            return userRepository.save(user);
+//        } else {
+//            throw new Exception()
+//        }
+//    }
 
 }

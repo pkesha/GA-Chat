@@ -22,9 +22,9 @@ public class ChatMessageService {
         this.userRepository = userRepository;
     }
 
-    public User getUser() {
-
-    }
+//    public User getUser() {
+//
+//    }
 
     /***************ChatMessages**************/
 //    public List<Messages> getMessages
