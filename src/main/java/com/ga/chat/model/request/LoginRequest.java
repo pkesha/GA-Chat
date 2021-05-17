@@ -2,14 +2,14 @@ package com.ga.chat.model.request;
 
 public class LoginRequest {
 
-    private String email;
+    private String userName;
     private String password;
 
-    public String getEmail() {
-        return email;
+    public String getUserName() {
+        return this.userName;
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 }
