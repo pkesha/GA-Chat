@@ -2,7 +2,6 @@ package com.ga.chat.service;
 
 import com.ga.chat.model.User;
 import com.ga.chat.repository.*;
-import org.jboss.logging.Messages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -3,8 +3,6 @@ package com.ga.chat.controller;
 import com.ga.chat.model.User;
 import com.ga.chat.model.request.LoginRequest;
 import com.ga.chat.service.UserService;
-import com.rabbitmq.client.RpcClient.Response;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
