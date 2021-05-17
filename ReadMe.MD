@@ -1,12 +1,6 @@
-## Content Review Database
-This backend will allow the client to save users who then proceed to provide
-their reviews on subjects and content of their choice. Each user can leave a
-review that will fall under any particular category of the users choosing. Under
-each review, other users can leave comments as well.
-
-In consideration of the user experience, users will only be able to use a First
-and Last name and not a custom defined user name. This will provide a communal
-experience that lends itself towards a sense of community.
+## Full Stack Chat application
+This full stack project will allow a user to create register, login, send and 
+receive messages from multiple conversations.
 
 ## User Stories
 * As a User I want to register
@@ -19,14 +13,16 @@ experience that lends itself towards a sense of community.
 
 ## Domain Models
 
-
+## Wireframe
 
 --------------
 ## Application Set-Up
 * Dependencies:
     * Spring v2.4.5
     * PostgreSQL v13.2
-
+    * Angular v11.2.10
+    * Node 14.15.5
+  
 * Springboot set up
     * application.properties
     * application-dev.properties

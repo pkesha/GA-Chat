@@ -16,6 +16,8 @@ public class Conversation {
 
     // There will only be two users
     // How to do many to many?
+    // There should be a max of 2
+    // Each user in the list should be unique--
     @JsonIgnore
     @ManyToMany
     @JoinColumn(name="user_id")
