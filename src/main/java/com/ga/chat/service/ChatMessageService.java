@@ -27,5 +27,5 @@ public class ChatMessageService {
     }
 
     /***************ChatMessages**************/
-    public List<Messages> getMessages
+//    public List<Messages> getMessages
 }

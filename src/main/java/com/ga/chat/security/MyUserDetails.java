@@ -11,7 +11,6 @@ public class MyUserDetails implements UserDetails {
     private final User user;
     private String userName;
     private String password;
-    private String emailAddress;
 
     public MyUserDetails(User user) {
         this.user = user;
@@ -29,7 +28,7 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return user.getEmailAddress();
+        return user.getUserName();
     }
 
     @Override
