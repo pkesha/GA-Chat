@@ -1,6 +1,6 @@
 package com.ga.chat.security;
 
-import com.ga.contentbackend.model.User;
+import com.ga.chat.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;

@@ -80,6 +80,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Configuration
     class CorsConfiguration implements WebMvcConfigurer {
     @Override
+    // This should be modified for STOMP
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins("*")
