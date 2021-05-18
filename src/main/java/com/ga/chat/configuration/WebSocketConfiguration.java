@@ -10,22 +10,24 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker
 public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer {
 
+    // Used to route the message from one client to another in the chat. 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry configure) {
-        // '/topic' - enables simple memory based message broker to carry messages back to the
-        // client to the destination prefixes set as '/topic'
-        configure.enableSimpleBroker("/topic");
-
-        // should this be api instead of app?
+        // will route to the message handling method
         configure.setApplicationDestinationPrefixes("/app");
+        
+        // '/topic' - enables simple memory based message broker to carry messages back to the
+        // client to the destination prefixes set as '/topics'
+        configure.enableSimpleBroker("/topics");
     }
 
-
+    // STOMP - Simple Text Oriented Messaging Protocol
+    // Defines rules & format for data exchanging between server and client
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
 
-        // Will broadcast to all?
-        registry.addEndpoint("/chat").setAllowedOrigins("*").withSockJS();
-        registry.addEndpoint("/chat").withSockJS();
+        // Define a WebSocket endpoint so that a client will use it to establish a connection 
+        // with our WebSocket server
+        registry.addEndpoint("/ws").withSockJS();
     }
 }
