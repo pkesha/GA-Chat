@@ -9,9 +9,13 @@ import java.time.LocalDate;
 @Table(name = "chatmessages")
 public class ChatMessage {
 
+    public enum MessageType {
+        CHAT,
+        JOIN,
+        LEAVE
+    }
 
     // This will have a column of id, with each new entry being unique
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column
