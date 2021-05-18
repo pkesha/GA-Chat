@@ -45,14 +45,15 @@ public class ChatMessage {
 
     private MessageType messageType;
 
-    public ChatMessage(Long id, String message, User user) {
+    public ChatMessage(Long id, String message, User user, MessageType messageType) {
         this.id = id;
         this.message = message;
         this.user = user;
+        this.messageType = messageType;
     }
 
-    public ChatMessage(MessageType type) {
-        this.messageType = type;
+    public ChatMessage(MessageType messageType) {
+        this.messageType = messageType;
     }
     
 

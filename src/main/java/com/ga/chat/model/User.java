@@ -48,10 +48,13 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String firstName, String lastName) {
-        this.id = id;
+    public User(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public User(String userName) {
+        this.userName = userName;
     }
 
     public String getFullName(){

@@ -1,5 +1,8 @@
 package com.ga.chat.repository;
 
+import java.util.List;
+import java.util.Optional;
+
 import com.ga.chat.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 

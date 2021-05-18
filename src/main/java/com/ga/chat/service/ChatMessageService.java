@@ -1,9 +1,11 @@
 package com.ga.chat.service;
 
+import com.ga.chat.model.ChatMessage;
 import com.ga.chat.model.User;
 import com.ga.chat.repository.*;
 import com.ga.chat.security.MyUserDetails;
 
+import org.apache.logging.log4j.message.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,10 @@ public class ChatMessageService {
         this.chatMessageRepository = chatMessageRepository;
         this.conversationRepository = conversationRepository;
         this.userRepository = userRepository;
+    }
+
+    public List<ChatMessage> getMessage() {
+        return chatMessageRepository.findAll();
     }
 
     public User getUser(){

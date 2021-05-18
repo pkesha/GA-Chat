@@ -10,6 +10,7 @@ import org.springframework.web.socket.messaging.SessionConnectedEvent;
 import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 
 import com.ga.chat.model.ChatMessage;
+import com.ga.chat.model.User;
 
 import org.slf4j.Logger;
 
@@ -36,10 +37,13 @@ public class WebSocketEventListener {
 
             ChatMessage chatMessage = new ChatMessage();
             // Set type
-            chatMessage.setType(ChatMessage.MessageType.LEAVE);
+            chatMessage.setMessageType(ChatMessage.MessageType.LEAVE);
 
             // Use models
-            chatMessage.setSender(username);
+            //Search for user
+            User user = new User(username);
+            user.getMessageList().add(chatMessage);
+            chatMessage.setUser(user);
 
             messagingTemplate.convertAndSend("/topic/public", chatMessage);
         }
