@@ -15,9 +15,6 @@ public class ChatMessage {
         LEAVE
     }
 
-    public MessageType getType() {
-        return this.type
-    }
 
     // This will have a column of id, with each new entry being unique
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -57,7 +54,6 @@ public class ChatMessage {
     public ChatMessage(MessageType type) {
         this.messageType = type;
     }
-
     
 
     public ChatMessage(Long id, String message, String fromLogin, LocalDate date) {
@@ -81,8 +77,15 @@ public class ChatMessage {
     public ChatMessage() {
 
     }
+    
 
+    public MessageType getMessageType() {
+        return messageType;
+    }
 
+    public void setMessageType(MessageType messageType) {
+        this.messageType = messageType;
+    }
 
     public Long getId() {
         return id;
