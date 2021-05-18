@@ -54,6 +54,10 @@ public class User {
         this.lastName = lastName;
     }
 
+    public String getFullName(){
+        return this.getFirstName() + " "  + this.getLastName();
+    }
+
     public Long getId() {
         return id;
     }
