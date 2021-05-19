@@ -17,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -44,7 +45,14 @@ public class ChatMessageController {
     }
 
     @PostMapping("/chatmessages")
-    public ResponseEntity<ChatMessage> sendMessage(@RequestBody ChatMessage chatMessage) {
+    public ResponseEntity<ChatMessage> sendChatMessage(@RequestBody ChatMessage chatMessage) {
         return new ResponseEntity<>(chatMessageService.sendMessage(chatMessage), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/categories/{categoryId}")
+    public ResponseEntity<ChatMessage> updateChatMessage(@PathVariable long chatMessageId, 
+    @RequestBody ChatMessage chatMessage) {
+        return new ResponseEntity<>(chatMessageService.updateChatMessage(chatMessage, chatMessageId), 
+        HttpStatus.OK);
     }
 }
