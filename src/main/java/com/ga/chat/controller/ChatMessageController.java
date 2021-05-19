@@ -13,22 +13,5 @@ import antlr.collections.List;
 @Controller
 public class ChatMessageController {
 
-    private final ChatMessageRepository chatMessageRepository;
-
-    public ChatMessageController(ChatMessageRepository chatMessageRepository) {
-        this.chatMessageRepository = chatMessageRepository;
-    }
-
-    public ChatMessage getMessage(Long messageId) {
-        return chatMessageRepository.findChatMessageByIdAndUserId(messageId, getUser().getId());
-    }
-
-    public User getUser() {
-        MyUserDetails userDetails = (MyUserDetails) SecurityContextHolder
-                .getContext()
-                .getAuthentication()
-                .getPrincipal();
-        return userDetails.getUser();
-    }
 
 }
