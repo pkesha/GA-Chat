@@ -42,9 +42,6 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<ChatMessage> messageList;
 
-    @OneToMany(mappedBy = "user")
-    private List<Conversation> conversationList;
-
     public User() {
     }
 
@@ -91,13 +88,5 @@ public class User {
 
     public void setMessageList(List<ChatMessage> messageList) {
         this.messageList = messageList;
-    }
-
-    public List<Conversation> getConversationList() {
-        return conversationList;
-    }
-
-    public void setConversationList(List<Conversation> conversationList) {
-        this.conversationList = conversationList;
     }
 }

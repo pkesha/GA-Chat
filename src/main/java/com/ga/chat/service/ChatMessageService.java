@@ -3,9 +3,9 @@ package com.ga.chat.service;
 import com.ga.chat.exception.InformationNotFoundException;
 import com.ga.chat.model.ChatMessage;
 import com.ga.chat.model.User;
-import com.ga.chat.repository.*;
+import com.ga.chat.repository.ChatMessageRepository;
+import com.ga.chat.repository.UserRepository;
 import com.ga.chat.security.MyUserDetails;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -15,16 +15,15 @@ import java.util.List;
 @Service
 public class ChatMessageService {
     private final ChatMessageRepository chatMessageRepository;
-    private final ConversationRepository conversationRepository;
     private final UserRepository userRepository;
 
     @Autowired
-    public ChatMessageService(ChatMessageRepository chatMessageRepository, ConversationRepository conversationRepository, UserRepository userRepository) {
+    public ChatMessageService(ChatMessageRepository chatMessageRepository, UserRepository userRepository) {
         this.chatMessageRepository = chatMessageRepository;
-        this.conversationRepository = conversationRepository;
         this.userRepository = userRepository;
     }
-// -----------------CHAT---------------------- //
+
+    // -----------------CHAT---------------------- //
     public List<ChatMessage> getMessages() {
         return chatMessageRepository.findAll();
     }
@@ -55,10 +54,6 @@ public class ChatMessageService {
     public void deleteChatMessage(Long chatMessageId) {
         this.getChatMessage(chatMessageId);
         chatMessageRepository.deleteById(chatMessageId);
-    }
-
-    public List<User> getUsers() {
-        return userRepository.findAll();
     }
 
 

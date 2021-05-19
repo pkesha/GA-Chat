@@ -37,12 +37,6 @@ public class ChatMessage {
     @JoinColumn(name="user_id")
     private User user;
 
-    // Many messages to a conversation
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name="conversation_id")
-    private Conversation conversation;
-
     private MessageType messageType;
 
     public ChatMessage(Long id, String message, User user, MessageType messageType) {
@@ -55,7 +49,7 @@ public class ChatMessage {
     public ChatMessage(MessageType messageType) {
         this.messageType = messageType;
     }
-    
+
 
     public ChatMessage(Long id, String message, String fromLogin, LocalDate date) {
         this.id = id;
@@ -64,21 +58,19 @@ public class ChatMessage {
         this.date = date;
     }
 
-    public ChatMessage(Long id, String message, String fromLogin, LocalDate date, User user,
-    Conversation conversation) {
+    public ChatMessage(Long id, String message, String fromLogin, LocalDate date, User user) {
         this.id = id;
         this.message = message;
         this.fromLogin = fromLogin;
         this.date = date;
         this.user = user;
-        this.conversation = conversation;
     }
 
     //Default Constructor
     public ChatMessage() {
 
     }
-    
+
 
     public MessageType getMessageType() {
         return messageType;
@@ -128,13 +120,6 @@ public class ChatMessage {
         this.user = user;
     }
 
-    public Conversation getConversation() {
-        return conversation;
-    }
-
-    public void setConversation(Conversation conversation) {
-        this.conversation = conversation;
-    }
 
     @Override
     public String toString() {
@@ -144,7 +129,6 @@ public class ChatMessage {
                 ", fromLogin='" + fromLogin + '\'' +
                 ", date=" + date +
                 ", user=" + user +
-                ", conversation=" + conversation +
                 '}';
     }
 }
