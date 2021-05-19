@@ -31,7 +31,7 @@ public class ChatMessageService {
         return chatMessageRepository.findAll();
     }
 
-    //Add messages
+    //Get messages
     public ChatMessage getChatMessage(Long messageId) {
         try{
             return chatMessageRepository.findChatMessageByIdAndUserId(messageId, getUser().getId());
@@ -40,15 +40,20 @@ public class ChatMessageService {
         }
     }
 
+    //  Add/Send messages
+    public ChatMessage sendMessage(ChatMessage chatMessage) {
+        chatMessage.setUser(getUser());
+        return chatMessageRepository.save(chatMessage);
+    }
+
     // Update messages
     public ChatMessage editChatMessage(ChatMessage chatMessage, Long chatId) {
         ChatMessage databaseChatMessage = this.getChatMessage(chatId);
         databaseChatMessage.setMessage(chatMessage.getMessage());
-        
         return chatMessageRepository.save(chatMessage);
     }
 
-    // Will update for both
+    // Will delete for both
     public void deleteChatMessage(Long chatMessageId) {
         this.getChatMessage(chatMessageId);
         chatMessageRepository.deleteById(chatMessageId);
@@ -57,6 +62,7 @@ public class ChatMessageService {
     public List<User> getUsers() {
         return userRepository.findAll();
     }
+
 
     public User getUser(){
         MyUserDetails userDetails = (MyUserDetails) SecurityContextHolder
