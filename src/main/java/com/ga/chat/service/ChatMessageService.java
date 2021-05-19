@@ -31,13 +31,21 @@ public class ChatMessageService {
         return chatMessageRepository.findAll();
     }
 
-    public ChatMessage addSentMessageToUser(ChatMessage userChatMessage, User sentUser){
-        if(userChatMessage.getUser().equals(null)){
-            throw new InformationExistsException("User added to ");
-        } else {
-            userChatMessage.getUser().setId(sentUser.getId());
-            return userChatMessage;
+    public ChatMessage getMessage(Long messageId) {
+        try{
+            return chatMessageRepository.findChatMessageByIdAndUserId(messageId, getUser().getId());
+        } catch (Exception e){
+            throw new InformationNotFoundException("Message with message id " + messageId + " was not found");
         }
+    }
+
+    // Update messages
+    public ChatMessage editChatMessage(ChatMessage chatMessage, Long chatId) {
+        ChatMessage databaseChatMessage = this.getMessage(chatId);
+        databaseChatMessage.setDate(chatMessage.getDate());
+        databaseChatMessage.setMessage(chatMessage.getMessage());
+        
+        return chatMessageRepository.save(chatMessage);
     }
 
     public List<User> getUsers() {
