@@ -4,24 +4,20 @@ import com.ga.chat.exception.InformationNotFoundException;
 import com.ga.chat.model.ChatMessage;
 import com.ga.chat.model.User;
 import com.ga.chat.repository.ChatMessageRepository;
-import com.ga.chat.repository.UserRepository;
 import com.ga.chat.security.MyUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.io.Console;
 import java.util.List;
 
 @Service
 public class ChatMessageService {
     private final ChatMessageRepository chatMessageRepository;
-    private final UserRepository userRepository;
 
     @Autowired
-    public ChatMessageService(ChatMessageRepository chatMessageRepository, UserRepository userRepository) {
+    public ChatMessageService(ChatMessageRepository chatMessageRepository) {
         this.chatMessageRepository = chatMessageRepository;
-        this.userRepository = userRepository;
     }
 
     // -----------------CHAT---------------------- //
