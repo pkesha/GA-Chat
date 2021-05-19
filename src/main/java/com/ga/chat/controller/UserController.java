@@ -26,14 +26,14 @@ public class UserController {
     @PostMapping("/register")
     public User createUser(@RequestBody User userInput) {
         User newUser = this.userService.createUser(userInput);
-        chatMessageIntro.setUser(newUser);
+        //chatMessageIntro.setUser(newUser);
         return newUser;
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest){
-        chatMessageIntro.setMessage(chatMessageIntro.getUser().getUserName() + " has entered the chat");
-        chatMessageService.sendMessage(chatMessageIntro);
+        // chatMessageIntro.setMessage(chatMessageIntro.getUser().getUserName() + " has entered the chat");
+        // chatMessageService.sendMessage(chatMessageIntro);
         return userService.loginUser(loginRequest);
     }
 }

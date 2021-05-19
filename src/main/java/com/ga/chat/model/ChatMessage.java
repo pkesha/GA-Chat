@@ -8,14 +8,6 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "chatmessages")
 public class ChatMessage {
-
-    public enum MessageType {
-        CHAT,
-        JOIN,
-        LEAVE
-    }
-
-
     // This will have a column of id, with each new entry being unique
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -26,9 +18,6 @@ public class ChatMessage {
     private String message;
 
     @Column
-    private String fromLogin;
-
-    @Column
     private LocalDate date;
 
     // There will be many messages to a User
@@ -37,31 +26,15 @@ public class ChatMessage {
     @JoinColumn(name="user_id")
     private User user;
 
-    private MessageType messageType;
-
-    public ChatMessage(Long id, String message, User user, MessageType messageType) {
+    public ChatMessage(Long id, String message, User user) {
         this.id = id;
         this.message = message;
         this.user = user;
-        this.messageType = messageType;
     }
 
-    public ChatMessage(MessageType messageType) {
-        this.messageType = messageType;
-    }
-
-
-    public ChatMessage(Long id, String message, String fromLogin, LocalDate date) {
+    public ChatMessage(Long id, String message, LocalDate date, User user) {
         this.id = id;
         this.message = message;
-        this.fromLogin = fromLogin;
-        this.date = date;
-    }
-
-    public ChatMessage(Long id, String message, String fromLogin, LocalDate date, User user) {
-        this.id = id;
-        this.message = message;
-        this.fromLogin = fromLogin;
         this.date = date;
         this.user = user;
     }
@@ -69,15 +42,6 @@ public class ChatMessage {
     //Default Constructor
     public ChatMessage() {
 
-    }
-
-
-    public MessageType getMessageType() {
-        return messageType;
-    }
-
-    public void setMessageType(MessageType messageType) {
-        this.messageType = messageType;
     }
 
     public Long getId() {
@@ -95,15 +59,6 @@ public class ChatMessage {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    public String getFromLogin() {
-        return fromLogin;
-    }
-
-    public void setFromLogin(String fromLogin) {
-        this.fromLogin = fromLogin;
-    }
-
     public LocalDate getDate() {
         return date;
     }
@@ -120,13 +75,11 @@ public class ChatMessage {
         this.user = user;
     }
 
-
     @Override
     public String toString() {
         return "ChatMessage{" +
                 "id=" + id +
                 ", message='" + message + '\'' +
-                ", fromLogin='" + fromLogin + '\'' +
                 ", date=" + date +
                 ", user=" + user +
                 '}';

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.io.Console;
 import java.util.List;
 
 @Service
@@ -25,7 +26,8 @@ public class ChatMessageService {
 
     // -----------------CHAT---------------------- //
     public List<ChatMessage> getMessages() {
-        return chatMessageRepository.findAll();
+        List<ChatMessage> foundMessages = chatMessageRepository.findAll();
+        return foundMessages;
     }
 
     //Get messages
@@ -47,7 +49,7 @@ public class ChatMessageService {
     public ChatMessage editChatMessage(ChatMessage chatMessage, Long chatId) {
         ChatMessage databaseChatMessage = this.getChatMessage(chatId);
         databaseChatMessage.setMessage(chatMessage.getMessage());
-        return chatMessageRepository.save(chatMessage);
+        return chatMessageRepository.save(databaseChatMessage);
     }
 
     // Will delete for both
