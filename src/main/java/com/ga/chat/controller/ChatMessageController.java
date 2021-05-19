@@ -1,17 +1,34 @@
 package com.ga.chat.controller;
 
+import java.util.List;
+
 import com.ga.chat.model.ChatMessage;
 import com.ga.chat.model.User;
 import com.ga.chat.repository.ChatMessageRepository;
 import com.ga.chat.security.MyUserDetails;
+import com.ga.chat.service.ChatMessageService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import antlr.collections.List;
+
 
 @Controller
 public class ChatMessageController {
 
+    private final ChatMessageService chatMessageService;
+
+    @Autowired
+    public ChatMessageController(ChatMessageService chatMessageService) {
+        this.chatMessageService = chatMessageService;
+    }
+
+    @GetMapping("/chatmessages") 
+    public List<ChatMessage> getChatMessages() {
+        return chatMessageService.getMessages();
+    }
 
 }
