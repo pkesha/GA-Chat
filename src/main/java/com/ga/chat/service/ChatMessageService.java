@@ -1,5 +1,7 @@
 package com.ga.chat.service;
 
+import com.ga.chat.exception.InformationExistsException;
+import com.ga.chat.exception.InformationNotFoundException;
 import com.ga.chat.model.ChatMessage;
 import com.ga.chat.model.User;
 import com.ga.chat.repository.*;
@@ -25,8 +27,21 @@ public class ChatMessageService {
         this.userRepository = userRepository;
     }
 
-    public List<ChatMessage> getMessage() {
+    public List<ChatMessage> getMessages() {
         return chatMessageRepository.findAll();
+    }
+
+    public ChatMessage addSentMessageToUser(ChatMessage userChatMessage, User sentUser){
+        if(userChatMessage.getUser().equals(null)){
+            throw new InformationExistsException("User added to ");
+        } else {
+            userChatMessage.getUser().setId(sentUser.getId());
+            return userChatMessage;
+        }
+    }
+
+    public List<User> getUsers() {
+        return userRepository.findAll();
     }
 
     public User getUser(){

@@ -1,29 +1,34 @@
 package com.ga.chat.controller;
 
 import com.ga.chat.model.ChatMessage;
+import com.ga.chat.model.User;
+import com.ga.chat.repository.ChatMessageRepository;
+import com.ga.chat.security.MyUserDetails;
+import org.springframework.security.core.context.SecurityContextHolder;
 
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.Payload;
-import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.stereotype.Controller;
+
+import antlr.collections.List;
 
 @Controller
 public class ChatMessageController {
 
-    @MessageMapping("/chat.sendMessage")
-    @SendTo("/topic/public")
-    public ChatMessage sendMessage(@Payload ChatMessage inputChatMessage) {
-        return inputChatMessage;
+    private final ChatMessageRepository chatMessageRepository;
+
+    public ChatMessageController(ChatMessageRepository chatMessageRepository) {
+        this.chatMessageRepository = chatMessageRepository;
     }
 
-    //Add users to chat
-    @MessageMapping("/chat.addUser")
-    @SendTo("/topic/public")
-    public ChatMessage addUser(@Payload ChatMessage chatMessage, 
-    SimpMessageHeaderAccessor headerAccessor) {
-        headerAccessor.getSessionAttributes().put("username", chatMessage.getUser().getUserName());
-
+    public ChatMessage getMessage(Long messageId) {
+        return chatMessageRepository.findChatMessageByIdAndUserId(messageId, getUser().getId());
     }
-    
+
+    public User getUser() {
+        MyUserDetails userDetails = (MyUserDetails) SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getPrincipal();
+        return userDetails.getUser();
+    }
+
 }
