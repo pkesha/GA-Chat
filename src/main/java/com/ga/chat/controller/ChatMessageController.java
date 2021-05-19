@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +30,7 @@ public class ChatMessageController {
         this.chatMessageService = chatMessageService;
     }
 
-    @GetMapping("/chatmessages") 
+    @GetMapping("/chatmessages")
     public List<ChatMessage> getChatMessages() {
         return chatMessageService.getMessages();
     }
@@ -46,9 +46,9 @@ public class ChatMessageController {
     }
 
     @PutMapping("/chatmessages/{chatMessageId}")
-    public ResponseEntity<ChatMessage> updateChatMessage(@PathVariable long chatMessageId, 
+    public ResponseEntity<ChatMessage> updateChatMessage(@PathVariable long chatMessageId,
     @RequestBody ChatMessage chatMessage) {
-        return new ResponseEntity<>(chatMessageService.editChatMessage(chatMessage, chatMessageId), 
+        return new ResponseEntity<>(chatMessageService.editChatMessage(chatMessage, chatMessageId),
         HttpStatus.OK);
     }
 
