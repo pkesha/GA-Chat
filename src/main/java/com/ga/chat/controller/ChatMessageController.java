@@ -3,16 +3,11 @@ package com.ga.chat.controller;
 import java.util.List;
 
 import com.ga.chat.model.ChatMessage;
-import com.ga.chat.model.User;
-import com.ga.chat.repository.ChatMessageRepository;
-import com.ga.chat.security.MyUserDetails;
 import com.ga.chat.service.ChatMessageService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,7 +48,7 @@ public class ChatMessageController {
     @PutMapping("/chatmessages/{chatMessageId}")
     public ResponseEntity<ChatMessage> updateChatMessage(@PathVariable long chatMessageId, 
     @RequestBody ChatMessage chatMessage) {
-        return new ResponseEntity<>(chatMessageService.updateChatMessage(chatMessage, chatMessageId), 
+        return new ResponseEntity<>(chatMessageService.editChatMessage(chatMessage, chatMessageId), 
         HttpStatus.OK);
     }
 

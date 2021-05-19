@@ -4,7 +4,6 @@ import com.ga.chat.exception.InformationExistsException;
 import com.ga.chat.model.User;
 import com.ga.chat.model.request.LoginRequest;
 import com.ga.chat.model.response.LoginResponse;
-import com.ga.chat.repository.ChatMessageRepository;
 import com.ga.chat.repository.UserRepository;
 import com.ga.chat.security.JWTUtils;
 
@@ -20,7 +19,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
     private UserRepository userRepository;
-    private ChatMessageRepository chatMessageRepository;
 
     @Autowired
     private AuthenticationManager authenticationManager;

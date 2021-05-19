@@ -3,7 +3,6 @@ package com.ga.chat.controller;
 import com.ga.chat.model.ChatMessage;
 import com.ga.chat.model.User;
 import com.ga.chat.model.request.LoginRequest;
-import com.ga.chat.repository.ChatMessageRepository;
 import com.ga.chat.service.ChatMessageService;
 import com.ga.chat.service.UserService;
 import org.springframework.http.ResponseEntity;
