@@ -26,12 +26,13 @@ public class ChatMessageService {
         this.conversationRepository = conversationRepository;
         this.userRepository = userRepository;
     }
-
+// -----------------CHAT---------------------- //
     public List<ChatMessage> getMessages() {
         return chatMessageRepository.findAll();
     }
 
-    public ChatMessage getMessage(Long messageId) {
+    //Add messages
+    public ChatMessage getChatMessage(Long messageId) {
         try{
             return chatMessageRepository.findChatMessageByIdAndUserId(messageId, getUser().getId());
         } catch (Exception e){
@@ -41,11 +42,16 @@ public class ChatMessageService {
 
     // Update messages
     public ChatMessage editChatMessage(ChatMessage chatMessage, Long chatId) {
-        ChatMessage databaseChatMessage = this.getMessage(chatId);
-        databaseChatMessage.setDate(chatMessage.getDate());
+        ChatMessage databaseChatMessage = this.getChatMessage(chatId);
         databaseChatMessage.setMessage(chatMessage.getMessage());
         
         return chatMessageRepository.save(chatMessage);
+    }
+
+    // Will update for both
+    public void deleteChatMessage(Long chatMessageId) {
+        this.getChatMessage(chatMessageId);
+        chatMessageRepository.deleteById(chatMessageId);
     }
 
     public List<User> getUsers() {
