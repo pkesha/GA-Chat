@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user/user.service";
 
 @Component({
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     const user = {
       userName: this.userName,
       password: this.password
-    }
+    };
 
     this.token = this.userService.loginUser(user);
   }
