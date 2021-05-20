@@ -14,5 +14,8 @@
 .links {
   margin-left: auto;
   display: flex;
+}
 
+#dropdownMenuLink {
+  width: 160px;
 }

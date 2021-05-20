@@ -1,0 +1,11 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+input, h2 {
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  align-content: center;
+  justify-content: center;
+}

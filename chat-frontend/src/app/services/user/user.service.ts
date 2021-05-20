@@ -22,7 +22,7 @@ export class UserService {
 
   loginUser(user: any): any {
     this.http
-      .post(`usrl/auth/users/login`, user)
+      .post(`${url}/auth/users/login`, user)
       .subscribe(response => {
         // @ts-ignore
         let token = response['jwt'];
