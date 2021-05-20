@@ -3,4 +3,7 @@
   <input [(ngModel)]="userName" name="userName" placeholder="User Name" type="text">
   <input [(ngModel)]="password" name="password" placeholder="Password" type="text"/>
   <input (click)="loginUser()" type="submit" value="Login"/>
+  <div *ngIf="errorLogin">
+    <p>Incorrect login!</p>
+  </div>
 </form>

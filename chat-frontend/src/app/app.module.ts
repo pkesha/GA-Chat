@@ -5,14 +5,13 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {FormsModule} from "@angular/forms";
 import {UserModule} from "./user/user.module";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
-import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
+import {InterceptorService} from "./services/error/interceptor.service";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ChatMessagesComponent
+    AppComponent
   ],
     imports: [
       HttpClientModule,
@@ -22,7 +21,13 @@ import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
       FormsModule,
       UserModule
     ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

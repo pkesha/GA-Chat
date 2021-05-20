@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {throwError} from "rxjs";
 
 const url = 'http://localhost:9092';
 
@@ -28,6 +29,10 @@ export class UserService {
         let token = response['jwt'];
         console.log(response);
         localStorage.setItem('token', `${token}`);
-      });
+      },
+        (error) => {
+        localStorage.setItem('error', 'true');
+        return error;
+        });
   }
 }
