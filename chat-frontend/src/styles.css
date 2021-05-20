@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url("src/app/assets/loginBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: ghostwhite;
+  background-attachment: fixed;
+}
+
+@media only screen and (max-width: 1350px) {
+  body {
+    background-size: 250%;
+    width: 100%;
+    hieght: 100%;
+    object-fit: cover;
+  }
+
+}
