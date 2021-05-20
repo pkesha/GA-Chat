@@ -1,39 +1,27 @@
-## Full Stack Chat application
-This full stack project will allow a user to create register, login, send and 
-receive messages from multiple conversations.
+# ChatFrontend
 
-## User Stories
-* As a User I want to register
-* As a User I want to login
-* As a User I want to Create, Send, and receive messages
-* As a User I want to Create, Read, and delete conversations
-* As a User I want to see all my conversations in a left panel
-* If another user deletes a conversation from their panel, I should be able to see it if I didn't
-* As a User, I want to logout
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
 
-## Domain Models
+## Development server
 
-## Wireframe
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
---------------
-## Application Set-Up
-* Dependencies:
-    * Spring v2.4.5
-    * PostgreSQL v13.2
-    * Angular v11.2.10
-    * Node 14.15.5
-  
-* Springboot set up
-    * application.properties
-    * application-dev.properties
-    * pom.xml maven dependencies
-    * Models
-    * Repositories
-    * Security & Users
-    * Service Layer
-    * Exception Handling
-    * Message broker
-    * WebSocket Configurer
-* Database setup
-* Project Structure
-* GitHub setup
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
