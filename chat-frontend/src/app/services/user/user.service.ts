@@ -24,6 +24,7 @@ export class UserService {
     this.http
       .post(`usrl/auth/users/login`, user)
       .subscribe(response => {
+        // @ts-ignore
         let token = response['jwt'];
         console.log(response);
         localStorage.setItem('token', `${token}`);
