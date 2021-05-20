@@ -19,4 +19,14 @@ export class UserService {
         console.log(user);
       });
   }
+
+  loginUser(user: any): any {
+    this.http
+      .post(`usrl/auth/users/login`, user)
+      .subscribe(response => {
+        let token = response['jwt'];
+        console.log(response);
+        localStorage.setItem('token', `${token}`);
+      });
+  }
 }
