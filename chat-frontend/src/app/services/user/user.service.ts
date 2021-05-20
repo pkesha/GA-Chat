@@ -31,8 +31,8 @@ export class UserService {
         localStorage.setItem('token', `${token}`);
       },
         (error) => {
-        localStorage.setItem('error', 'true');
-        return error;
+        localStorage.setItem('login_error', 'true');
+        alert("Incorrect Login!")
         });
   }
 }

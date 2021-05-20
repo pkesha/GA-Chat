@@ -5,9 +5,10 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {FormsModule} from "@angular/forms";
 import {UserModule} from "./user/user.module";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+// import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
-import {InterceptorService} from "./services/error/interceptor.service";
+import {HttpClientModule} from "@angular/common/http";
+// import {InterceptorService} from "./services/error/interceptor.service";
 
 @NgModule({
   declarations: [
@@ -22,11 +23,11 @@ import {InterceptorService} from "./services/error/interceptor.service";
       UserModule
     ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: InterceptorService,
-      multi: true
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: InterceptorService,
+    //   multi: true
+    // }
   ],
   bootstrap: [AppComponent]
 })

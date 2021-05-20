@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user/user.service";
-import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-login',
@@ -29,7 +28,7 @@ export class LoginComponent implements OnInit {
         console.log("login component " + content)
       //Load chat component
     },
-      (error: HttpErrorResponse) => {
+      (error: any) => {
         console.log("error from login component " + error);
           //this.errorLogin = true;
           console.log(this.errorLogin);
