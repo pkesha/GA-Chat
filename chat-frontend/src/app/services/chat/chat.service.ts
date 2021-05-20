@@ -22,13 +22,18 @@ export class ChatService {
       .get(`${url}`, this.requestOptions);
   }
 
-  sendMessage(chatMessage: any) : any {
+  sendChatMessage(chatMessage: any) : any {
     return this.http
       .post(`${url}`, chatMessage , this.requestOptions);
   }
 
-  deleteMessage(chatMessageId: any) : any {
+  deleteChatMessage(chatMessageId: any) : any {
     return this.http
       .delete(`${url}/${chatMessageId}`, this.requestOptions)
+  }
+
+  updateChatMessage(chatMessageId: any) : any {
+    return this.http
+      .put(`${url}/${chatMessageId}`, this.requestOptions);
   }
 }

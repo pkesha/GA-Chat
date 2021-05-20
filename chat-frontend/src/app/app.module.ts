@@ -7,10 +7,12 @@ import {FormsModule} from "@angular/forms";
 import {UserModule} from "./user/user.module";
 import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
+import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatMessagesComponent
   ],
     imports: [
       HttpClientModule,
