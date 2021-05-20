@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from "../services/user/user.service";
 
 @Component({
   selector: 'app-register',
@@ -6,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  public userName: String;
-  public password: String;
-  public firstName: String;
-  public lastName: String;
+  public userName: String | undefined;
+  public password: String | undefined;
+  public firstName: String | undefined;
+  public lastName: String | undefined;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +25,7 @@ export class RegisterComponent implements OnInit {
       lastName: this.lastName
     };
 
+    this.userService.registerUser(newUser);
   }
 
 }
