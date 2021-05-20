@@ -23,7 +23,12 @@ export class ChatService {
   }
 
   sendMessage(chatMessage: any) : any {
-    const token = localStorage.getItem('token');
-    const request
+    return this.http
+      .post(`${url}`, chatMessage , this.requestOptions);
+  }
+
+  deleteMessage(chatMessageId: any) : any {
+    return this.http
+      .delete(`${url}/${chatMessageId}`, this.requestOptions)
   }
 }
