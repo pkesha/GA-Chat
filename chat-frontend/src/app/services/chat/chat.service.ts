@@ -8,18 +8,22 @@ const url = 'http://localhost:9092/api/messages';
 })
 export class ChatService {
   message: string | undefined;
+  token = localStorage.getItem('token');
+  requestOptions = {
+    headers: new HttpHeaders( {
+      Authorization: `Bearer ${this.token}`
+    })
+  };
 
   constructor(private http: HttpClient) { }
 
   getMessages() {
-    const token = localStorage.getItem('token');
-    const requestOptions = {
-      headers: new HttpHeaders( {
-        Authorization: `Bearer ${token}`
-      })
-    };
-
     return this.http
-      .get(`${url}`, requestOptions);
+      .get(`${url}`, this.requestOptions);
+  }
+
+  sendMessage(chatMessage: any) : any {
+    const token = localStorage.getItem('token');
+    const request
   }
 }
