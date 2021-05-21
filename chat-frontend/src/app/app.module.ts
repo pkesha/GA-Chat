@@ -8,11 +8,13 @@ import {UserModule} from "./user/user.module";
 // import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
+import { ChatboxComponent } from './chatbox/chatbox.component';
 // import {InterceptorService} from "./services/error/interceptor.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatboxComponent
   ],
     imports: [
       HttpClientModule,
