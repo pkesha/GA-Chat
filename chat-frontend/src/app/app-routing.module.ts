@@ -4,6 +4,7 @@ import {RegisterComponent} from "./user/register/register.component";
 import {LoginComponent} from "./user/login/login.component";
 import {ChatboxComponent} from "./chatbox/chatbox.component";
 import {ChatmessagesComponent} from "./chatmessages/chatmessages.component";
+import {LogoutComponent} from "./user/logout/logout.component";
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   },
   {
     path: 'chatbox',

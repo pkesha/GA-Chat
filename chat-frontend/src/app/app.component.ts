@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   userRoutes: string[] = [
     'register',
-    'login'
+    'login',
+    'logout'
   ]
   title = 'chat-frontend';
 }
