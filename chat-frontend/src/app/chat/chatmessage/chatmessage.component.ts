@@ -7,6 +7,9 @@ import {ChatService} from "../../services/chat/chat.service";
   styleUrls: ['./chatmessage.component.css']
 })
 export class ChatmessageComponent implements OnInit {
+  name = localStorage.getItem('name');
+  user = localStorage.getItem('currentUser');
+
   @Input() message : any;
 
   @Output() deleteItemEvent = new EventEmitter<any>();
@@ -14,6 +17,7 @@ export class ChatmessageComponent implements OnInit {
   constructor(private chatService: ChatService) { }
 
   ngOnInit(): void {
+    console.log(this.message)
   }
 
   deleteMessage(chatMessageId: number): void {

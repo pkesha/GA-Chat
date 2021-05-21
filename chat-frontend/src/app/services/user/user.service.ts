@@ -33,7 +33,9 @@ export class UserService {
       .subscribe(response => {
         // @ts-ignore
         let token = response['jwt'];
+        localStorage.setItem('userId', user.id)
         localStorage.setItem('currentUser', `${user.userName}`);
+        localStorage.setItem('name', `${user.fullName}`);
         localStorage.setItem('token', `${token}`);
         this.currentUser = user.userName;
         this.router.navigate(['/chatbox']);

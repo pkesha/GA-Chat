@@ -1,5 +1,6 @@
 package com.ga.chat.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.ga.chat.model.ChatMessage;

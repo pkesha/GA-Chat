@@ -1,5 +1,8 @@
 package com.ga.chat.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -24,6 +27,7 @@ public class User {
     private String lastName;
 
     @OneToMany(mappedBy = "user")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<ChatMessage> messageList;
 
     public User() {

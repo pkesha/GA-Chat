@@ -8,7 +8,9 @@ const url = 'http://localhost:9092/api/chatmessages';
 })
 export class ChatService {
   message: string | undefined;
+
   token = localStorage.getItem('token');
+
   requestOptions = {
     headers: new HttpHeaders( {
       Authorization: `Bearer ${this.token}`

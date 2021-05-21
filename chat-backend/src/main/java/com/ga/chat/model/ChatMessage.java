@@ -1,6 +1,9 @@
 package com.ga.chat.model;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.annotations.LazyCollection;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -21,22 +24,25 @@ public class ChatMessage {
     private LocalDate date;
 
     // There will be many messages to a User
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="user_id")
+    @JsonIgnore
     private User user;
 
-    public ChatMessage(Long id, String message, User user) {
+//    @ManyToOne
+//    @JsonIgnore
+//    @JoinColumn(name="user_name")
+//    private Long user.
+
+    public ChatMessage(Long id, String message) {
         this.id = id;
         this.message = message;
-        this.user = user;
     }
 
-    public ChatMessage(Long id, String message, LocalDate date, User user) {
+    public ChatMessage(Long id, String message, LocalDate date) {
         this.id = id;
         this.message = message;
         this.date = date;
-        this.user = user;
     }
 
     //Default Constructor
@@ -59,6 +65,7 @@ public class ChatMessage {
     public void setMessage(String message) {
         this.message = message;
     }
+
     public LocalDate getDate() {
         return date;
     }

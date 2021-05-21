@@ -10,7 +10,10 @@
   padding: 10px;
   border-radius: 10px;
   width: 95vw;
-  height: auto;
+  height: 65vh;
+  overflow: auto;
+  color: black;
+  text-align: center;
 }
 
 .Send {

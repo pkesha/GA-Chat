@@ -9,21 +9,42 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import javax.management.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import java.util.HashMap;
 import java.util.List;
+
 
 @Service
 public class ChatMessageService {
     private final ChatMessageRepository chatMessageRepository;
+    private EntityManager entityManager;
+    private Object Query;
 
     @Autowired
     public ChatMessageService(ChatMessageRepository chatMessageRepository) {
         this.chatMessageRepository = chatMessageRepository;
     }
 
-    // -----------------CHAT---------------------- //
+    // -----------------CHAT---------------------- chatmessages - ChatMessage - ChatMessageController//
     public List<ChatMessage> getMessages() {
-        List<ChatMessage> foundMessages = chatMessageRepository.findAll();
-        return foundMessages;
+        return chatMessageRepository.findAll();
+//        List <ChatMessage> list;
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("test");
+//        EntityManager em = emf.createEntityManager();
+//        em.getTransaction().begin();
+//        list = em.createQuery("FROM chatmessages c", ChatMessage.class).getResultList();
+//        em.getTransaction().commit();
+//        System.out.println(list);
+
+//        List<ChatMessage> foundMessages = chatMessageRepository.findAll();
+//        HashMap responseMessage = new HashMap();
+//        responseMessage.put("username", getUser().getUserName());
+//        responseMessage.put("messages", foundMessages);
+//        System.out.println(responseMessage);
+//        return responseMessage;
     }
 
     //Get messages
@@ -37,7 +58,10 @@ public class ChatMessageService {
 
     //  Add/Send messages
     public ChatMessage sendMessage(ChatMessage chatMessage) {
+//        MyUserDetails myUserDetails = (MyUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        System.out.println(getUser().getId());
         chatMessage.setUser(getUser());
+//        chatMessage.
         return chatMessageRepository.save(chatMessage);
     }
 

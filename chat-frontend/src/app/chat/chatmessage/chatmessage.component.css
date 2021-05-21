@@ -4,5 +4,12 @@ h1 {
 }
 
 #message {
-  background-color: greenyellow;
+  margin: 5px;
+  padding: 1px;
+  border: 10px;
+  border-radius: 5px;
+  background-color: dodgerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
