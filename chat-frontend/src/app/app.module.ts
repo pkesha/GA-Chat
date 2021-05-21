@@ -24,13 +24,7 @@ import { ChatmessagesComponent } from './chatmessages/chatmessages.component';
       FormsModule,
       UserModule
     ],
-  providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: InterceptorService,
-    //   multi: true
-    // }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

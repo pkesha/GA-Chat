@@ -17,7 +17,11 @@ export class ChatboxComponent implements OnInit {
     if(this.chatMessages === null) {
 
     } else {
+      this.getChatMessages();
 
+      if(!localStorage.getItem('currentUser')) {
+        alert('<span> Need to login first! </span>');
+      }
     }
   }
 
@@ -31,9 +35,16 @@ export class ChatboxComponent implements OnInit {
   }
 
   sendMessage(): any {
+    let timeSent = new Date();
+    timeSent.getDate();
+    timeSent.getTime();
+    timeSent.getHours();
+    timeSent.getMinutes();
+    timeSent.getSeconds();
+
     let newChatMessage: any = {
       message: this.message,
-      date: Date.now()
+      date: timeSent
     };
 
     this.chatService.sendChatMessage(newChatMessage)
