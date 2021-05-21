@@ -33,7 +33,7 @@ export class UserService {
         localStorage.setItem('token', `${token}`);
       },
         () => {
-        alert("Incorrect Login!")
+        alert("Incorrect Login!");
         });
   }
 }

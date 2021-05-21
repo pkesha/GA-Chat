@@ -10,7 +10,6 @@ export class LoginComponent implements OnInit {
   public userName: string | undefined;
   public password: string | undefined;
   public token: any;
-  public errorLogin: boolean = false;
 
   constructor(private userService: UserService) { }
 
@@ -26,6 +25,7 @@ export class LoginComponent implements OnInit {
     };
     console.log(localStorage);
     this.token = this.userService.loginUser(user);
+
   }
 
 
