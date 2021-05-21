@@ -10,13 +10,15 @@ import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import { ChatboxComponent } from './chatbox/chatbox.component';
 import { ChatmessagesComponent } from './chatmessages/chatmessages.component';
+import { LogoutComponent } from './logout/logout.component';
 // import {InterceptorService} from "./services/error/interceptor.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatboxComponent,
-    ChatmessagesComponent
+    ChatmessagesComponent,
+    LogoutComponent
   ],
     imports: [
       HttpClientModule,
