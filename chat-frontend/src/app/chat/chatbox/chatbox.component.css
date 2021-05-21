@@ -6,6 +6,13 @@
   margin-top: -50px;
 }
 
+#message-in-chatbox {
+  padding: 10px;
+  border-radius: 10px;
+  width: 95vw;
+  height: auto;
+}
+
 .Send {
   margin: 20px;
   display: flex;
@@ -15,6 +22,7 @@
 
 #textSend {
   width: 60vw;
+  padding: 5px;
 }
 
 #buttonSend {

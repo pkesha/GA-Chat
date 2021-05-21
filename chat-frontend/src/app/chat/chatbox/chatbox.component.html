@@ -1,4 +1,11 @@
 <div id="background">
+  <div id="message-in-chatbox" *ngIf="chatMessages.length != 0">
+    <app-chatmessages>
+      *ngFor="let messagesExisting of chatMessages"
+      [message]="messagesExisting"
+      (deleteItemEvent)="getChatMessages()">
+    </app-chatmessages>
+  </div>
 
 </div>
 
@@ -9,10 +16,3 @@
   <input id="buttonGet" (click)="getChatMessages()" type="submit" value="Refresh"/>
 </form>
 
-<div *ngIf="chatMessages.length != 0">
-  <app-chatmessages>
-    *ngFor="let messagesExisting of chatMessages"
-    [message]="messagesExisting"
-    (deleteItemEvent)="getChatMessages()">
-  </app-chatmessages>
-</div>

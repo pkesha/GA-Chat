@@ -8,6 +8,10 @@ import {ChatmessageComponent} from "./chat/chatmessage/chatmessage.component";
 
 const routes: Routes = [
   {
+    path:'',
+    component: LoginComponent
+  },
+  {
     path: 'register',
     component: RegisterComponent
   },
