@@ -1,6 +1,5 @@
 ## Approach
-At first, I planned on making a chat application backend using STOMP instead of REST/HTTP.
-I also planned on making a multiple conversations within the chat.  
+At first, I planned on making a chat application backend using STOMP instead of REST/HTTP. 
 Due to scalability, concurrency, and time constraints, I created my Springboot backend to work with
 REST/HTTP.
 
@@ -9,7 +8,7 @@ a chat module and user module.  I also have two service classes for chat message
 
 ## Full Stack Chat application
 This full stack project will allow a user to create register, login, send and 
-view messages from a community chat.  This could also double as an internal company chat/posting site too.
+view messages anonymously from a community chat.  This could also double as an internal company chat/posting site too.
 
 ## User Stories
 * As a User I want to register
@@ -22,6 +21,7 @@ view messages from a community chat.  This could also double as an internal comp
 
 ## Application Sceenshots
 ![img.png](chat-frontend/planning/login.png)
+![img.png](chat-frontend/planning/messagesbox.png)
 --------------
 ## Application Set-Up
 * Dependencies:
