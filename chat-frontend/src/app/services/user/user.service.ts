@@ -45,5 +45,10 @@ export class UserService {
 
   logoutUser(): void {
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('token');
+    // @ts-ignore
+    this.currentUser = null;
+    this.searchSubject.next(this.currentUser);
+    this.router.navigate(['/login']);
   }
 }
