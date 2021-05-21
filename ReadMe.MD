@@ -1,20 +1,27 @@
+## Approach
+At first, I planned on making a chat application backend using STOMP instead of REST/HTTP.
+I also planned on making a multiple conversations within the chat.  
+But because of scalability, concurrency, and time constraints, I created my Springboot backend to work with
+REST/HTTP.
+
+After building and testing my backend, I used Angular to create the front end.  Most components could be grouped into two modules:
+a chat module and user module.  I also have two service classes for chat messages and users.
+
 ## Full Stack Chat application
 This full stack project will allow a user to create register, login, send and 
-receive messages from multiple conversations.
+view messages from a community chat.  This could also double as an internal company chat/posting site too.
 
 ## User Stories
 * As a User I want to register
 * As a User I want to login
-* As a User I want to Create, Send, and receive messages
-* As a User I want to Create, Read, and delete conversations
-* As a User I want to see all my conversations in a left panel
-* If another user deletes a conversation from their panel, I should be able to see it if I didn't
+* As a User I want to Create, Send, and view messages
 * As a User, I want to logout
 
 ## Domain Models
+![img.png](chat-frontend/planning/models.png)
 
-## Wireframe
-
+## Application Sceenshots
+![img.png](chat-frontend/planning/login.png)
 --------------
 ## Application Set-Up
 * Dependencies:
@@ -37,3 +44,36 @@ receive messages from multiple conversations.
 * Database setup
 * Project Structure
 * GitHub setup
+* Angular Setup
+  * Components
+  * Modules
+  * Routing
+  * Services
+  * Authentication & login
+* Heroku setup
+* Readme
+
+--------------
+## Progress
+
+- [X] Backend
+  - [X] Models
+  - [X] REST
+  - [X] Services
+  - [X] REST Controller
+  - [X] Exceptions
+  - [X] Repos
+  - [X] Update pom.xml 
+  - [X] Update resources folder
+  - [X] Postman testing
+
+- [X] Frontend
+  - [X] Services
+  - [X] Components
+  - [X] Modules
+  - [X] Routing
+  - [X] Styling
+  - [X] CRUD
+
+- [X] Deployment on Heroku
+

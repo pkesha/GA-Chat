@@ -9,6 +9,8 @@ import {ChatService} from "../services/chat/chat.service";
 export class ChatboxComponent implements OnInit {
   // @ts-ignore
   public chatMessages: [];
+  public currentUserMessagesDb: [] | undefined;
+  public otherUsersMessagesDb: [] | undefined;
   public message: string | undefined;
 
   constructor(private chatService : ChatService) { }
@@ -32,6 +34,11 @@ export class ChatboxComponent implements OnInit {
         this.chatMessages = messages;
         console.log(this.chatMessages);
       });
+
+    this.chatMessages.forEach(message => {
+      }
+    )
+
   }
 
   sendMessage(): any {

@@ -3,8 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {RegisterComponent} from "./user/register/register.component";
 import {LoginComponent} from "./user/login/login.component";
 import {ChatboxComponent} from "./chatbox/chatbox.component";
-import {ChatmessagesComponent} from "./chatmessages/chatmessages.component";
 import {LogoutComponent} from "./user/logout/logout.component";
+import {ChatmessageComponent} from "./chatmessage/chatmessage.component";
 
 const routes: Routes = [
   {
@@ -21,7 +21,13 @@ const routes: Routes = [
   },
   {
     path: 'chatbox',
-    component: ChatboxComponent
+    component: ChatboxComponent,
+    children: [
+      {
+        path: 'chatmessage/:id',
+        component: ChatmessageComponent
+      }
+    ]
   }
 ];
 

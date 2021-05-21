@@ -3,10 +3,10 @@ import {ChatService} from "../services/chat/chat.service";
 
 @Component({
   selector: 'app-chatmessages',
-  templateUrl: './chatmessages.component.html',
-  styleUrls: ['./chatmessages.component.css']
+  templateUrl: './chatmessage.component.html',
+  styleUrls: ['./chatmessage.component.css']
 })
-export class ChatmessagesComponent implements OnInit {
+export class ChatmessageComponent implements OnInit {
   @Input() message : any;
 
   @Output() deleteItemEvent = new EventEmitter<any>();

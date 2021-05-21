@@ -8,13 +8,13 @@ import {UserModule} from "./user/user.module";
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import { ChatboxComponent } from './chatbox/chatbox.component';
-import { ChatmessagesComponent } from './chatmessages/chatmessages.component';
+import { ChatmessageComponent } from './chatmessage/chatmessage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatboxComponent,
-    ChatmessagesComponent
+    ChatmessageComponent
   ],
     imports: [
       HttpClientModule,
