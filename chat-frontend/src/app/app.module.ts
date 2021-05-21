@@ -9,14 +9,14 @@ import {UserModule} from "./user/user.module";
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import { ChatboxComponent } from './chatbox/chatbox.component';
-import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
+import { ChatmessagesComponent } from './chatmessages/chatmessages.component';
 // import {InterceptorService} from "./services/error/interceptor.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatboxComponent,
-    ChatMessagesComponent
+    ChatmessagesComponent
   ],
     imports: [
       HttpClientModule,

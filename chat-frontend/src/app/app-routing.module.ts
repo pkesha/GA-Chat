@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {RegisterComponent} from "./user/register/register.component";
 import {LoginComponent} from "./user/login/login.component";
 import {ChatboxComponent} from "./chatbox/chatbox.component";
+import {ChatmessagesComponent} from "./chatmessages/chatmessages.component";
 
 const routes: Routes = [
   {
@@ -14,11 +15,12 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'chat',
+    path: 'chatbox',
     component: ChatboxComponent,
     children: [
       {
-        path:
+        path:'chatmessages/:id',
+        component: ChatmessagesComponent
       }
     ]
   }
