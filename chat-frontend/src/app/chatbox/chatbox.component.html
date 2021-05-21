@@ -1,18 +1,15 @@
-<div id="background">
-
-</div>
-
 <form>
   <input [(ngModel)]="message" type="text" name="message"
          placeholder="Message"/>
   <input (click)="sendMessage()" type="submit" value="Send Message"/>
   <input (click)="getChatMessages()" type="submit" value="Get Messages"/>
 </form>
+
 <div *ngIf="chatMessages.length != 0">
   <app-category-card
     *ngFor="let messagesExisting of chatMessages"
-    [category]="category"
-    (deleteItemEvent)="getCategories()">
+    [category]="messagesExisting"
+    (deleteItemEvent)="getChatMessages()">
 
   </app-category-card>
 </div>

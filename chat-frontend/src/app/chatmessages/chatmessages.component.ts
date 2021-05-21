@@ -18,7 +18,7 @@ export class ChatmessagesComponent implements OnInit {
 
   deleteMessage(chatMessageId: number): void {
     this.chatService.deleteChatMessage(chatMessageId)
-      .subscribe(response => {
+      .subscribe((response: string) => {
         console.log(response + "message id " + chatMessageId);
         this.deleteItemEvent.emit();
       });
@@ -26,7 +26,7 @@ export class ChatmessagesComponent implements OnInit {
 
   updateMessage(chatMessageId: number): void {
     this.chatService.updateChatMessage(chatMessageId)
-      .subscribe(response => {
+      .subscribe((response: string) => {
         console.log(response + " chat id " + chatMessageId);
         this.deleteItemEvent.emit();
       });
