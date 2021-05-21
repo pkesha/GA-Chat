@@ -1,7 +1,7 @@
 ## Approach
 At first, I planned on making a chat application backend using STOMP instead of REST/HTTP.
 I also planned on making a multiple conversations within the chat.  
-But because of scalability, concurrency, and time constraints, I created my Springboot backend to work with
+Due to scalability, concurrency, and time constraints, I created my Springboot backend to work with
 REST/HTTP.
 
 After building and testing my backend, I used Angular to create the front end.  Most components could be grouped into two modules:
