@@ -15,24 +15,17 @@ export class LoginComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+
   }
 
   loginUser() {
+    console.log("loginUser - component")
     const user = {
       userName: this.userName,
       password: this.password
     };
-    //console.log(localStorage.getItem("token"));
-    this.token = this.userService.loginUser(user)
-      .subscribe((content: string) => {
-        console.log("login component " + content)
-      //Load chat component
-    },
-      (error: any) => {
-        console.log("error from login component " + error);
-          //this.errorLogin = true;
-          console.log(this.errorLogin);
-      });
+    console.log(localStorage);
+    this.token = this.userService.loginUser(user);
   }
 
 

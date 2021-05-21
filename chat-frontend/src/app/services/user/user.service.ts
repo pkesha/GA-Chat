@@ -13,12 +13,15 @@ export class UserService {
   }
 
   registerUser(user: any): void {
-    console.log('user service - registerUser method');
     this.http
       .post(`${url}/auth/users/register`, user)
       .subscribe(user => {
         console.log(user);
-      });
+        alert("Registration Successful!");
+      },
+        () => {
+          alert("Invalid Registration!");
+        });
   }
 
   loginUser(user: any): any {
@@ -27,11 +30,9 @@ export class UserService {
       .subscribe(response => {
         // @ts-ignore
         let token = response['jwt'];
-        console.log(response);
         localStorage.setItem('token', `${token}`);
       },
-        (error) => {
-        localStorage.setItem('login_error', 'true');
+        () => {
         alert("Incorrect Login!")
         });
   }
