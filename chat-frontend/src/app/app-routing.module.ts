@@ -16,13 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'chatbox',
-    component: ChatboxComponent,
-    children: [
-      {
-        path:'chatmessages/:id',
-        component: ChatmessagesComponent
-      }
-    ]
+    component: ChatboxComponent
   }
 ];
 

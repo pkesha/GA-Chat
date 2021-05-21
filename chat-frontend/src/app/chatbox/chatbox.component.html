@@ -1,15 +1,18 @@
-<form>
-  <input [(ngModel)]="message" type="text" name="message"
+<div id="background">
+
+</div>
+
+<form class="Send">
+  <input id="textSend" [(ngModel)]="message" type="text" name="message"
          placeholder="Message"/>
-  <input (click)="sendMessage()" type="submit" value="Send Message"/>
-  <input (click)="getChatMessages()" type="submit" value="Get Messages"/>
+  <input id="buttonSend" (click)="sendMessage()" type="submit" value="Send Message"/>
+  <input id="buttonGet" (click)="getChatMessages()" type="submit" value="Refresh"/>
 </form>
 
 <div *ngIf="chatMessages.length != 0">
-  <app-category-card
+  <app-chatmessages>
     *ngFor="let messagesExisting of chatMessages"
-    [category]="messagesExisting"
+    [message]="messagesExisting"
     (deleteItemEvent)="getChatMessages()">
-
-  </app-category-card>
+  </app-chatmessages>
 </div>

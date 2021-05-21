@@ -7,7 +7,8 @@ import {ChatService} from "../services/chat/chat.service";
   styleUrls: ['./chatbox.component.css']
 })
 export class ChatboxComponent implements OnInit {
-  public chatMessages: [] | undefined;
+  // @ts-ignore
+  public chatMessages: [];
   public message: string | undefined;
 
   constructor(private chatService : ChatService) { }
