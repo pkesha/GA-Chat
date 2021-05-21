@@ -7,14 +7,11 @@ import {FormsModule} from "@angular/forms";
 import {UserModule} from "./user/user.module";
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
-import { ChatboxComponent } from './chatbox/chatbox.component';
-import { ChatmessageComponent } from './chatmessage/chatmessage.component';
+import {ChatModule} from "./chat/chat.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatboxComponent,
-    ChatmessageComponent
   ],
     imports: [
       HttpClientModule,
@@ -22,7 +19,8 @@ import { ChatmessageComponent } from './chatmessage/chatmessage.component';
       CommonModule,
       AppRoutingModule,
       FormsModule,
-      UserModule
+      UserModule,
+      ChatModule
     ],
   providers: [],
   bootstrap: [AppComponent]

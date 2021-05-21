@@ -2,9 +2,9 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {RegisterComponent} from "./user/register/register.component";
 import {LoginComponent} from "./user/login/login.component";
-import {ChatboxComponent} from "./chatbox/chatbox.component";
+import {ChatboxComponent} from "./chat/chatbox/chatbox.component";
 import {LogoutComponent} from "./user/logout/logout.component";
-import {ChatmessageComponent} from "./chatmessage/chatmessage.component";
+import {ChatmessageComponent} from "./chat/chatmessage/chatmessage.component";
 
 const routes: Routes = [
   {
@@ -22,12 +22,10 @@ const routes: Routes = [
   {
     path: 'chatbox',
     component: ChatboxComponent,
-    children: [
-      {
-        path: 'chatmessage/:id',
-        component: ChatmessageComponent
-      }
-    ]
+  },
+  {
+    path: 'chatmessage',
+    component: ChatmessageComponent
   }
 ];
 
