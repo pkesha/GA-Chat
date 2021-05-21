@@ -24,4 +24,12 @@ export class ChatmessagesComponent implements OnInit {
       });
   }
 
+  updateMessage(chatMessageId: number): void {
+    this.chatService.updateChatMessage(chatMessageId)
+      .subscribe(response => {
+        console.log(response + " chat id " + chatMessageId);
+        this.deleteItemEvent.emit();
+      });
+  }
+
 }
