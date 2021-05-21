@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {throwError} from "rxjs";
+import {Subject, throwError} from "rxjs";
+import {Router} from "@angular/router";
 
 const url = 'http://localhost:9092';
 
@@ -8,8 +9,10 @@ const url = 'http://localhost:9092';
   providedIn: 'root'
 })
 export class UserService {
+  currentUser: string | undefined;
+  searchSubject = new Subject();
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
   }
 
   registerUser(user: any): void {
@@ -30,10 +33,17 @@ export class UserService {
       .subscribe(response => {
         // @ts-ignore
         let token = response['jwt'];
+        localStorage.setItem('currentUser', `${user.userName}`);
         localStorage.setItem('token', `${token}`);
+        this.currentUser = user.userName;
+        this.router.navigate(['/chatbox']);
       },
         () => {
         alert("Incorrect Login!");
         });
+  }
+
+  logoutUser(): void {
+    localStorage.removeItem('currentUser');
   }
 }
