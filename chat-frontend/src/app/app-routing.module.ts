@@ -15,7 +15,12 @@ const routes: Routes = [
   },
   {
     path: 'chat',
-    component: ChatboxComponent
+    component: ChatboxComponent,
+    children: [
+      {
+        path:
+      }
+    ]
   }
 ];
 
