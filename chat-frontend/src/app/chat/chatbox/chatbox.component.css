@@ -1,38 +1,46 @@
-#background {
-  border-radius: 10px;
-  background-color: white;
-  width: 95vw;
-  height: 65vh;
-  margin-top: -50px;
+.view-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-#message-in-chatbox {
-  padding: 10px;
+#background, #messages-in-chatbox {
   border-radius: 10px;
   width: 95vw;
   height: 65vh;
+  max-width: 1000px;
+}
+
+#background {
+  background-color: white;
+}
+
+#messages-in-chatbox {
   overflow: auto;
   color: black;
-  text-align: center;
 }
 
 .Send {
+  width: 90vw;
   margin: 20px;
   display: flex;
-  justify-content: space-between;
-  align-content: space-between;
+  /*padding: 10px;*/
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 #textSend {
-  width: 60vw;
+  max-width: 750px;
+  flex-grow: 1;
+}
+
+#buttonGet, #buttonSend, #textSend {
+  margin: 5px;
   padding: 5px;
 }
 
-#buttonSend {
-  width: 15vw;
-  alignment: right;
-}
-
-#buttonGet {
-  width: 15vw;
+#buttonSend, #buttonGet {
+  min-width: 150px;
 }

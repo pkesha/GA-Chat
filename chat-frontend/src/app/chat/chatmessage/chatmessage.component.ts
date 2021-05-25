@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ChatService} from "../../services/chat/chat.service";
 
 @Component({
@@ -10,14 +10,14 @@ export class ChatmessageComponent implements OnInit {
   name = localStorage.getItem('name');
   user = localStorage.getItem('currentUser');
 
-  @Input() message : any;
+  @Input() chatMessage: any;
 
   @Output() deleteItemEvent = new EventEmitter<any>();
 
-  constructor(private chatService: ChatService) { }
+  constructor(private chatService: ChatService) {
+  }
 
   ngOnInit(): void {
-    console.log(this.message)
   }
 
   deleteMessage(chatMessageId: number): void {

@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-//https://aqueous-cove-04345.herokuapp.com/
-const url = 'http://localhost:9092/api/chatmessages';
+//https://ga-capstone-chat-backend.herokuapp.com/
+const url = 'https://ga-capstone-chat-backend.herokuapp.com/api/chatmessages';
 
 @Injectable({
   providedIn: 'root'
@@ -12,29 +12,30 @@ export class ChatService {
   token = localStorage.getItem('token');
 
   requestOptions = {
-    headers: new HttpHeaders( {
+    headers: new HttpHeaders({
       Authorization: `Bearer ${this.token}`
     })
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getMessages() {
     return this.http
       .get(`${url}`, this.requestOptions);
   }
 
-  sendChatMessage(chatMessage: any) : any {
+  sendChatMessage(chatMessage: any): any {
     return this.http
-      .post(`${url}`, chatMessage , this.requestOptions);
+      .post(`${url}`, chatMessage, this.requestOptions);
   }
 
-  deleteChatMessage(chatMessageId: any) : any {
+  deleteChatMessage(chatMessageId: any): any {
     return this.http
       .delete(`${url}/${chatMessageId}`, this.requestOptions)
   }
 
-  updateChatMessage(chatMessageId: any) : any {
+  updateChatMessage(chatMessageId: any): any {
     return this.http
       .put(`${url}/${chatMessageId}`, this.requestOptions);
   }

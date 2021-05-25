@@ -1,9 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ChatService} from "../../services/chat/chat.service";
-import { Subscription, timer } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
-import { interval } from 'rxjs';
-import { takeWhile } from 'rxjs/operators';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-chatbox',
@@ -20,23 +17,22 @@ export class ChatboxComponent implements OnInit {
   public message: string | undefined;
   public interval: any | undefined;
 
-  constructor(private chatService : ChatService) {
+  constructor(private chatService: ChatService) {
   }
 
   ngOnInit(): void {
-    if(this.chatMessages === null) {
+    if (this.chatMessages === null) {
 
     } else {
       this.getChatMessages();
 
-      if(!localStorage.getItem('currentUser')) {
+      if (!localStorage.getItem('currentUser')) {
         alert('<span> Need to login first! </span>');
       }
     }
 
     this.refreshData();
     this.interval = setInterval(() => {
-      console.log("George cut the cheese");
       this.refreshData();
     }, 1000);
   }
@@ -71,7 +67,7 @@ export class ChatboxComponent implements OnInit {
       })
   }
 
-  refreshData(){
+  refreshData() {
     this.getChatMessages();
-}
+  }
 }

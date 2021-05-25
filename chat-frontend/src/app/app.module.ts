@@ -13,16 +13,17 @@ import {ChatModule} from "./chat/chat.module";
   declarations: [
     AppComponent,
   ],
-    imports: [
-      HttpClientModule,
-      BrowserModule,
-      CommonModule,
-      AppRoutingModule,
-      FormsModule,
-      UserModule,
-      ChatModule
-    ],
+  imports: [
+    HttpClientModule,
+    BrowserModule,
+    CommonModule,
+    AppRoutingModule,
+    FormsModule,
+    UserModule,
+    ChatModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

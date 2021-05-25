@@ -8,7 +8,7 @@ import {ChatmessageComponent} from "./chat/chatmessage/chatmessage.component";
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: LoginComponent
   },
   {
@@ -37,4 +37,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

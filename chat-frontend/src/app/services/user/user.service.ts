@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Subject, throwError} from "rxjs";
+import {Subject} from "rxjs";
 import {Router} from "@angular/router";
 
-const url = 'http://localhost:9092';
+const url = 'https://ga-capstone-chat-backend.herokuapp.com';
 
 @Injectable({
   providedIn: 'root'
@@ -19,9 +19,9 @@ export class UserService {
     this.http
       .post(`${url}/auth/users/register`, user)
       .subscribe(user => {
-        console.log(user);
-        alert("Registration Successful!");
-      },
+          console.log(user);
+          alert("Registration Successful!");
+        },
         () => {
           alert("Invalid Registration!");
         });
@@ -31,17 +31,17 @@ export class UserService {
     this.http
       .post(`${url}/auth/users/login`, user)
       .subscribe(response => {
-        // @ts-ignore
-        let token = response['jwt'];
-        localStorage.setItem('userId', user.id)
-        localStorage.setItem('currentUser', `${user.userName}`);
-        localStorage.setItem('name', `${user.fullName}`);
-        localStorage.setItem('token', `${token}`);
-        this.currentUser = user.userName;
-        this.router.navigate(['/chatbox']);
-      },
+          // @ts-ignore
+          let token = response['jwt'];
+          localStorage.setItem('userId', user.id)
+          localStorage.setItem('currentUser', `${user.userName}`);
+          localStorage.setItem('name', `${user.fullName}`);
+          localStorage.setItem('token', `${token}`);
+          this.currentUser = user.userName;
+          this.router.navigate(['/chatbox']);
+        },
         () => {
-        alert("Incorrect Login!");
+          alert("Incorrect Login!");
         });
   }
 
