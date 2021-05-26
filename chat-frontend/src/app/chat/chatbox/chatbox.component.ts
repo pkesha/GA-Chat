@@ -62,8 +62,10 @@ export class ChatboxComponent implements OnInit {
 
     this.chatService.sendChatMessage(newChatMessage)
       .subscribe((response: any) => {
-        console.log(response)
+        console.log(response);
         this.getChatMessages();
-      })
+      }, () => {
+        alert('Invalid input or too many requests!');
+    });
   }
 }
