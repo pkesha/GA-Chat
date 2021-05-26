@@ -1,3 +1,6 @@
+### Frontend: https://ga-capstone-chat-frontend.herokuapp.com/
+### Backend: https://ga-capstone-chat-backend.herokuapp.com/
+
 ## Approach
 At first, I planned on making a chat application backend using STOMP instead of REST/HTTP. 
 Due to scalability, concurrency, and time constraints, I created my Springboot backend to work with
