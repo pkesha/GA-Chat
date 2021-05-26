@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-//https://ga-capstone-chat-backend.herokuapp.com/
-const url = 'https://ga-capstone-chat-backend.herokuapp.com/api/chatmessages';
+
+ const url = 'http://localhost:9092/api/chatmessages'
+// const url = 'https://ga-capstone-chat-backend.herokuapp.com/api/chatmessages';
 
 @Injectable({
   providedIn: 'root'

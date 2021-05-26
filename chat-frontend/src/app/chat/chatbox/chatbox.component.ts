@@ -31,9 +31,9 @@ export class ChatboxComponent implements OnInit {
       }
     }
 
-    this.refreshData();
+    this.getChatMessages();
     this.interval = setInterval(() => {
-      this.refreshData();
+      this.getChatMessages();
     }, 1000);
   }
 
@@ -65,9 +65,5 @@ export class ChatboxComponent implements OnInit {
         console.log(response)
         this.getChatMessages();
       })
-  }
-
-  refreshData() {
-    this.getChatMessages();
   }
 }

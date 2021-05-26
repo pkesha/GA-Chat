@@ -3,7 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {Subject} from "rxjs";
 import {Router} from "@angular/router";
 
-const url = 'https://ga-capstone-chat-backend.herokuapp.com';
+const url = 'http://localhost:9092';
+// const url = 'https://ga-capstone-chat-backend.herokuapp.com';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,7 @@ export class UserService {
       .subscribe(user => {
           console.log(user);
           alert("Registration Successful!");
+          this.router.navigate(['/login']);
         },
         () => {
           alert("Invalid Registration!");

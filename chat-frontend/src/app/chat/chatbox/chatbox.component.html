@@ -1,6 +1,6 @@
 <div class="view-area">
   <div id="background">
-    <div *ngIf="chatMessages.length != 0" id="messages-in-chatbox">
+    <div id="messages-in-chatbox">
       <app-chatmessages
         (deleteItemEvent)="getChatMessages()"
         *ngFor="let messagesExisting of chatMessages"
