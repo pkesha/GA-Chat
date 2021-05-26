@@ -6,6 +6,8 @@ REST/HTTP.
 After building and testing my backend, I used Angular to create the front end.  Most components could be grouped into two modules:
 a chat module and user module.  I also have two service classes for chat messages and users.
 
+I then update the Springboot backend to reject empty or whitespace messages, and also prevent DDos by implementing HTTP 429 error code response.
+
 ## Full Stack Chat application
 This full stack project will allow a user to create register, login, send and 
 view messages anonymously from a community chat.  This could also double as an internal company chat/posting site too.
